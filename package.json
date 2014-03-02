@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "dependencies": {},
   "devDependencies": {
-    "grunt": "~0.4.1",
+    "grunt": "^0.4.2",
     "grunt-autoprefixer": "^0.4.2",
     "grunt-bower-install": "^0.7.0",
     "grunt-concurrent": "~0.4.1",
@@ -40,7 +40,8 @@
     "karma-requirejs": "^0.2.1",
     "karma-phantomjs-launcher": "^0.1.2",
     "karma": "^0.10.9",
-    "karma-ng-html2js-preprocessor": "^0.1.0"
+    "karma-ng-html2js-preprocessor": "^0.1.0",
+    "grunt-ts": "^1.7.2-2"
   },
   "engines": {
     "node": ">=0.8.0"

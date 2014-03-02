@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('v2App', []);
+angular.module('auction', []);

@@ -3,7 +3,7 @@
 describe('Controller: MainCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('v2App'));
+  beforeEach(module('auction'));
 
   var MainCtrl,
     scope;

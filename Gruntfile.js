@@ -38,6 +38,10 @@ module.exports = function (grunt) {
         files: ['test/spec/{,*/}*.js'],
         tasks: ['newer:jshint:test', 'karma']
       },
+      ts: {
+        files: ['<%= yeoman.app %>/scripts/{,*/}*.ts'],
+        tasks: ['ts']
+      },
       styles: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
         tasks: ['newer:copy:styles', 'autoprefixer']
@@ -52,6 +56,7 @@ module.exports = function (grunt) {
         files: [
           '<%= yeoman.app %>/{,*/}*.html',
           '.tmp/styles/{,*/}*.css',
+          '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
@@ -106,6 +111,20 @@ module.exports = function (grunt) {
           jshintrc: 'test/.jshintrc'
         },
         src: ['test/spec/{,*/}*.js']
+      }
+    },
+
+    ts: {
+      options: {
+        module: 'amd',
+        target: 'es5',
+        sourcemap: true,
+        sourceRoot: '/scripts'
+      },
+      dist: {
+        src: ['<%= yeoman.app %>/scripts/{,*/}*.ts'],
+        reference: '<%= yeoman.app %>/scripts/refs.ts',
+        outDir: '.tmp/scripts'
       }
     },
 
@@ -277,15 +296,18 @@ module.exports = function (grunt) {
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       server: [
-        'copy:styles'
+        'copy:styles',
+        'ts'
       ],
       test: [
-        'copy:styles'
+        'copy:styles',
+        'ts'
       ],
       dist: [
         'copy:styles',
         'imagemin',
-        'svgmin'
+        'svgmin',
+        'ts'
       ]
     },
 
