@@ -28,48 +28,14 @@
       </p>
     <![endif]-->
 
-    <!-- Navbar -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#/">ABC Auction</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <form class="navbar-form navbar-left navbar-input-group" role="search">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>&nbsp;
-                    <a href="#/search" class="btn btn-default" id="get-data-btn">Submit</a>
-                </form>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#/help"><span class="glyphicon glyphicon-question-sign"></span> Help</a></li>
-                    <li><a href="#/login"><span class="glyphicon glyphicon-user"></span> Login</a></li>
-                    <li><a href="#/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping cart</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <br/><br/><br/>
-    <!-- / Navbar -->
+
+    <auction-navbar></auction-navbar>
 
     <!-- Add your site or application content here -->
     <div class="container" ng-view></div>
 
-    <!-- Footer -->
-    <footer class="text-center">
-        <br/>
-        <a href="#/">Home</a> |
-        <a href="#/search">Search</a> |
-        <a href="#/about">About Us</a> |
-        <a href="#/tos">Terms of Service</a>
-        <br/><br/>
-    </footer>
-    <!-- / Footer -->
+    <auction-footer></auction-footer>
+
 
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
@@ -89,6 +55,8 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controller/MainController.js"></script>
         <script src="scripts/controller/SearchController.js"></script>
+        <script src="scripts/directive/FooterDirective.js"></script>
+        <script src="scripts/directive/NavbarDirective.js"></script>
         <script src="scripts/service/ProductService.js"></script>
         <script src="scripts/model/ProductModel.js"></script>
         <!-- endbuild -->
