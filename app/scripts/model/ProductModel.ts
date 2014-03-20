@@ -5,6 +5,7 @@ module auction.model {
   // registered into Angular's DI container, it should be available outside the
   // `auction.model` module.
   export class ProductModel {
+    id         : number;
     description: string;
     price      : number;
     thumb      : string;

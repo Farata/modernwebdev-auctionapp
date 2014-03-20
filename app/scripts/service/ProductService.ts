@@ -9,6 +9,7 @@ module auction.service {
   // really handy.
   export interface IProductService {
     getFeatured(): ng.IPromise<m.ProductModel[]>;
+    getById(id: number): ng.IPromise<m.ProductModel>;
     search(): ng.IPromise<m.ProductModel[]>;
   }
 
@@ -34,7 +35,7 @@ module auction.service {
 
     /**
      * Returns the list of featured products.
-     * @returns {IPromise<T>} List of featured products.
+     * @returns List of featured products.
      */
     getFeatured(): ng.IPromise<m.ProductModel[]> {
       var products = this.$q.defer<m.ProductModel[]>();
@@ -48,16 +49,29 @@ module auction.service {
 
     /**
      * Searches for products with specified criteria.
-     * @returns {IPromise<T>} List of found products.
+     * @returns List of found products.
      */
-      search(): ng.IPromise<m.ProductModel[]> {
+    search(): ng.IPromise<m.ProductModel[]> {
       var products = this.$q.defer<m.ProductModel[]>();
 
       this.$http.get('data/search-results.json')
         .success((data) => products.resolve(<m.ProductModel[]>data.items))
-        .error(() => this.$log.error(ProductService.ERROR_MSG_FEATURED));
+        .error(() => this.$log.error(ProductService.ERROR_MSG_SEARCH));
 
       return products.promise;
+    }
+
+    /**
+     * Returns a product if the product with specified ID exists, otherwise -
+     * undefined.
+     * @param id ID to find the product.
+     * @returns Product with specified ID.
+     */
+    getById(id: number): ng.IPromise<m.ProductModel> {
+      var product = this.$q.defer<m.ProductModel>();
+
+      return this.search().then((products: m.ProductModel[]) =>
+        _.find(products, p => p.id === id));
     }
   }
 

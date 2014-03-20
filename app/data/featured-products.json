@@ -2,6 +2,7 @@
     "heading":"Featured products",
     "items": [
     {
+        "id": 1,
         "title": "Item 1",
         "thumb": "images/01.jpg",
         "url": "",
@@ -11,6 +12,7 @@
         "price": "123"
     },
     {
+        "id": 2,
         "title": "Item 2",
         "thumb": "images/02.jpg",
         "url": "",
@@ -20,6 +22,7 @@
         "price": "43"
     },
     {
+        "id": 3,
         "title": "Item 3",
         "thumb": "images/03.jpg",
         "url": "",
@@ -29,6 +32,7 @@
         "price": "39"
     },
     {
+        "id": 4,
         "title": "Item 4",
         "thumb": "images/04.jpg",
         "url": "",
@@ -38,6 +42,7 @@
         "price": "72"
     },
     {
+        "id": 5,
         "title": "Item 5",
         "thumb": "images/05.jpg",
         "url": "",
@@ -47,6 +52,7 @@
         "price": "84"
     },
     {
+        "id": 6,
         "title": "Item 6",
         "thumb": "images/06.jpg",
         "url": "",

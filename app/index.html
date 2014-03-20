@@ -12,6 +12,8 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap-datepicker/css/datepicker.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap-datepicker/css/datepicker3.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/main.css -->
@@ -48,15 +50,22 @@
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controller/MainController.js"></script>
+        <script src="scripts/controller/ProductController.js"></script>
         <script src="scripts/controller/SearchController.js"></script>
+        <script src="scripts/directive/DatepickerDirective.js"></script>
         <script src="scripts/directive/FooterDirective.js"></script>
         <script src="scripts/directive/NavbarDirective.js"></script>
+        <script src="scripts/directive/ProductGalleryDirective.js"></script>
+        <script src="scripts/directive/ProductPropertiesDirective.js"></script>
+        <script src="scripts/directive/SearchFormDirective.js"></script>
         <script src="scripts/service/ProductService.js"></script>
         <script src="scripts/model/ProductModel.js"></script>
         <!-- endbuild -->

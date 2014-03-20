@@ -5,7 +5,6 @@ module auction.directive {
 
   function auctionFooterDirective() {
     return {
-      scope: true,
       restrict: 'E',
       templateUrl: 'views/partial/footer.html'
     };
